@@ -1,0 +1,43 @@
+
+<link rel="import"  href="https://polygit.org/components/polymer/polymer.html">
+
+
+<dom-module id="contact-card">
+
+<template id="profileTemplate">
+
+<style>
+   .profile{border-style: solid;box-shadow: 1px 2px;width:270px;}
+   .etiq {margin-left:10px;color:black;font-weight: bold;display:inline-block;width:100px;}
+   .profile__name {display:inline}
+   .profile__tfno {display:inline}
+   .profile__email {display:inline}
+</style>
+
+
+  <div class="profile">
+    <div class="etiq">Nombre:</div><div class="profile__name">{{nombre}}</div><br/>
+    <div class="etiq">Telefono:</div><div class="profile__tfno">{{telefono}}</div><br/>
+    <div class="etiq">Email:</div><div class="profile__email">{{email}}</div>
+  </div>
+</template>
+
+  
+
+    <script>
+
+        Polymer({
+
+            is: 'contact-card',
+
+            properties: {
+		nombre: String,
+		email: String,
+		telefono: String
+            }
+
+        });
+
+    </script>
+
+</dom-module>

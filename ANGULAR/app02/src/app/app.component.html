@@ -1,0 +1,46 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="100" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+
+
+<h2>Formulario REACTIVO:</h2>
+<form class='classform1' #f='ngForm'>
+<label>Nombre:</label>
+<input name='txtNombre' type='text' [(ngModel)]='txtNombre'><br/>
+<label>Apellidos:</label>
+<input name='txtApellidos' type='text' [(ngModel)]='txtApellidos'>
+<br/>
+<label>Color1:</label>
+<select name='lstColor' [(ngModel)]='cod_color'>
+	<option *ngFor='let color of colores'>{{color[0]}}</option>
+</select>
+<br/>
+<label>Color2:</label>
+<select name='lstColor2' [(ngModel)]='cod_color2'>
+	<option *ngFor='let color of colores' value='{{color[1]}}'>{{color[0]}}</option>
+</select>
+</form>
+
+<br/>
+<h2>Modelo:</h2>
+Nombre:{{txtNombre}}<br/>
+Apellidos:{{txtApellidos}}<br/>
+Color1: {{cod_color}}<br/>
+Codigo color2: {{cod_color2}}
+
+
+<br/>
+<h2>BOTÓN que añade elementos al MODELO:</h2>
+<button type='button' (click)='addLinea()'>ADD LINEA</button>
+
+<p *ngFor='let linea of lineas; let i=index'>
+    <button type='button' (click)='delLinea(i)'>DEL</button>
+	{{linea}}
+</p>
+
+

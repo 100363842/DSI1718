@@ -1,0 +1,74 @@
+<html>
+
+
+<head>
+
+
+<style>
+   .profile{border-style: solid;box-shadow: 1px 2px;width:270px;}
+   .etiq {margin-left:10px;color:black;font-weight: bold;display:inline-block;width:100px;}
+   .profile__name {display:inline}
+   .profile__tfno {display:inline}
+   .profile__email {display:inline}
+</style>
+
+<template id="profileTemplate">
+  <div class="profile">
+    <div class="etiq">Nombre:</div><div class="profile__name"></div><br/>
+    <div class="etiq">Telefono:</div><div class="profile__tfno"></div><br/>
+    <div class="etiq">Email:</div><div class="profile__email"></div>
+  </div>
+</template>
+
+
+
+<script>
+  // Define the class for a new element called custom-element
+  class tarjetaContacto extends HTMLElement {
+    static get is() { return "tarjeta-contacto"; }
+    constructor() {
+        super();
+      }
+    
+   connectedCallback() {
+      //super.connectedCallback();     
+
+      var template = document.querySelector('#profileTemplate');
+      var clone = document.importNode(template.content, true);
+      clone.querySelector('.profile__name').textContent =this.getAttribute('nombre');
+      clone.querySelector('.profile__tfno').textContent =this.getAttribute('telefono');
+      clone.querySelector('.profile__email').textContent =this.getAttribute('email');
+      document.body.appendChild(clone);
+    }
+
+  }
+  // Register the new element with the browser
+  customElements.define(tarjetaContacto .is, tarjetaContacto );
+</script>
+
+
+</head>
+
+<body>
+
+  <h1>VISUALIZAR CON CHROME!!!</h1>
+  <br/><br/>
+
+  Ejemplo 2 - Uso de Templates y Custom Components: 
+  <br/>
+  
+  <ul>
+	<li type="square">El estilo viene definido con CSS.</li>
+	<li type="square">HTML definido con Template.</li>
+	<li type="square">Custom Component: Registro con JavaScript (customElements.define).</li>
+	<li type="square">Atributos personalizados con Javascript.</li>
+  <ul> 
+
+  <tarjeta-contacto nombre="Ricardo Martin Manso" email="ricardma@inf.uc3m.es" telefono="91-333.33.33"></tarjeta-contacto>
+
+
+</body>
+
+
+</html>
+

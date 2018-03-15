@@ -1,1 +1,0 @@
-robocopy c:\LABORATORIO e:\ioniclab\repositorio /S /E /PURGE

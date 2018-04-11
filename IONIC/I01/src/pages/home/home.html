@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Pantalla principal</h3>
+
+  <!--<button ion-button secondary menuToggle>Toggle Menu</button>-->
+  
+  <button ion-button (click)="gotoPage('Pag1Page')">Ir a pagina de navegación</button>
+  <button ion-button (click)="gotoPage('PagBotonesPage')">Ir a pagina de Botones</button>
+  <button ion-button (click)="gotoPage('CardsPage')">Ir a pagina de Cards</button>
+  <button ion-button (click)="gotoPage('ChecksPage')">Ir a pagina de Checks</button>
+
+
+</ion-content>
